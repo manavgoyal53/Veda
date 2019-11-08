@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "189303896390",
+    "firebase_url": "https://veda-2e4f7.firebaseio.com",
+    "project_id": "veda-2e4f7",
+    "storage_bucket": "veda-2e4f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189303896390:android:9e06c2a4b207dad6ba0d47",
+        "android_client_info": {
+          "package_name": "com.example.veda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189303896390-1vscvtlfohrf4im6a4lar4nem6bi12bb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmkosMoXajuFMFBIrUzLYTh7-F0PvAkW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189303896390-1vscvtlfohrf4im6a4lar4nem6bi12bb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

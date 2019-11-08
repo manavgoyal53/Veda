@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     TextView textView;
     FirebaseAuth mFireBaseAuth;
     private DatabaseReference mDatabase;
-    private DatabaseReference sensor_update1;
+    private DatabaseReference age_update;
     private DatabaseReference name_update;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     @Override
@@ -44,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView3);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         name_update = mDatabase.child("UserDta").child(uId).child("name");
+        age_update = mDatabase.child("UserDta").child(uId).child("name");
         mDatabase.keepSynced(true);
         save.setOnClickListener(new View.OnClickListener() {
             @Override

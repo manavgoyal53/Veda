@@ -23,9 +23,9 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        submit = findViewById(R.id.button9);
-        emailId = findViewById(R.id.editText9);
-        password = findViewById(R.id.editText10);
+        submit = findViewById(R.id.button);
+        emailId = findViewById(R.id.editText2);
+        password = findViewById(R.id.editText3);
         mFirebaseAuth = FirebaseAuth.getInstance();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

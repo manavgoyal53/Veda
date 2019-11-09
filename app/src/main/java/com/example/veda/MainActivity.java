@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        signup = findViewById(R.id.button7);
-        login = findViewById(R.id.button8);
+        signup = findViewById(R.id.button11);
+        login = findViewById(R.id.button10);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

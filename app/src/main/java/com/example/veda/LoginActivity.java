@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
     EditText emailId, password;
     Button btnSingIn;
-    TextView tvSignUp;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     @Override
@@ -32,14 +31,13 @@ public class LoginActivity extends AppCompatActivity {
         emailId = findViewById(R.id.editText2);
         password = findViewById(R.id.editText3);
         btnSingIn = findViewById(R.id.button);
-        tvSignUp = findViewById(R.id.textView);
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFireBaseUser = mFirebaseAuth.getCurrentUser();
                 if(mFireBaseUser!=null){
                     Toast.makeText(LoginActivity.this,"You are Logegd in!",Toast.LENGTH_SHORT).show();
-                    Intent i  = new Intent(LoginActivity.this,HomeActivity.class);
+                    Intent i  = new Intent(LoginActivity.this, Main2Activity.class);
                     startActivity(i);
                 }
                 else{
@@ -82,13 +80,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this,"Error Occured",Toast.LENGTH_SHORT).show();
                     }
 
-            }
-        });
-        tvSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intSignup = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intSignup);
             }
         });
     }

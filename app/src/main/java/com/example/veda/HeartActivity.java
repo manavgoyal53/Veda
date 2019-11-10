@@ -3,6 +3,7 @@ package com.example.veda;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.renderscript.Sampler;
 import android.view.View;
@@ -33,9 +34,16 @@ public class HeartActivity extends AppCompatActivity {
         mDatabase.keepSynced(true);
         heart_change = FirebaseDatabase.getInstance().getReference("UserData/"+uId+"/heart");
         heart_change.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String heart = dataSnapshot.getValue(String.class);
+                if(Integer.parseInt(heart)<60 || Integer.parseInt(heart)>95) {
+                    heart_value.setTextColor(getResources().getColor(R.color.red));
+                }
+                if(Integer.parseInt(heart)<=95 && Integer.parseInt(heart)>=60) {
+                    heart_value.setTextColor(getResources().getColor(R.color.green));
+                }
                 heart_value.setText(heart);
             }
 

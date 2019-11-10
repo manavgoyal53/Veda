@@ -36,12 +36,10 @@ public class EcgActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String ecg = dataSnapshot.getValue(String.class);
-                ecg_value.setTextColor(R.color.green);
                 ecg_value.setText(ecg);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

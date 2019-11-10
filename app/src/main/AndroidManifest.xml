@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.veda">
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <dist:module dist:instant="true" />
 
     <application
@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityActivity"></activity>
+        <activity android:name=".ActivityActivity" />
         <activity android:name=".AnalyticsActivity" />
         <activity android:name=".HeartActivity" />
         <activity android:name=".EcgActivity" />

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +30,6 @@ public class HomeActivity extends AppCompatActivity {
     EditText height_view;
     Button save;
     private RadioGroup radioGroup;
-    TextView textView;
     FirebaseAuth mFireBaseAuth;
     private DatabaseReference mDatabase;
     private DatabaseReference name_change;
@@ -44,7 +44,6 @@ public class HomeActivity extends AppCompatActivity {
         btnLogout = findViewById(R.id.button2);
         final String uId = mFireBaseUser.getUid();
         save = findViewById(R.id.button3);
-        textView = (TextView)findViewById(R.id.textView3);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         name_change = FirebaseDatabase.getInstance().getReference("UserData/"+uId+"/name");
         mDatabase.keepSynced(true);
@@ -52,7 +51,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String sensor1 = dataSnapshot.getValue(String.class);
-                textView.setText("Hello");
 
             }
 
@@ -82,19 +80,28 @@ public class HomeActivity extends AppCompatActivity {
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = (RadioButton)radioGroup.findViewById(selectedId);
                 String gender  = (String) radioButton.getText();
-                if(name!=null) {
+                if(!TextUtils.isEmpty(name))
+                {
                     mDatabase.child("UserData").child(uId).child("Name").setValue(name);
                 }
-                if(age!=null)
+                if(!TextUtils.isEmpty(age))
                 {
-                    mDatabase.child("UserData").child(uId).child("Age").setValue(age);
+                    Integer age_value = Integer.parseInt(age);
+                    mDatabase.child("UserData").child(uId).child("Age").setValue(age_value);
+                }
+                if(!TextUtils.isEmpty(weight))
+                {
+                    Integer weight_value = Integer.parseInt(weight);
+                    mDatabase.child("UserData").child(uId).child("Weight").setValue(weight_value);
                 }
                 if(gender!=null)
                 {
                     mDatabase.child("UserData").child(uId).child("Gender").setValue(gender);
                 }
-                if(height!=null){
-                    mDatabase.child("UserData").child(uId).child("Height").setValue(height);
+                if(!TextUtils.isEmpty(height))
+                {
+                    Integer height_value = Integer.parseInt(height);
+                    mDatabase.child("UserData").child(uId).child("Height").setValue(height_value);
                 }
                 Toast.makeText(getApplicationContext(),"Data Updated",Toast.LENGTH_SHORT).show();
             }

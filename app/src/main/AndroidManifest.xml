@@ -7,12 +7,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignupActivity"></activity>
+        <activity android:name=".ActivityActivity"></activity>
+        <activity android:name=".AnalyticsActivity" />
+        <activity android:name=".HeartActivity" />
+        <activity android:name=".EcgActivity" />
+        <activity android:name=".SignupActivity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
